@@ -49,11 +49,9 @@ export default function FitnessApp() {
   const [commentInput, setCommentInput] = useState({})
 
   const [exerciseList, setExerciseList] = useState([
-    { id: 1, name: "วิ่ง", reps: "30 นาที", done: false, calories: 300, icon: "🏃" },
-    { id: 2, name: "กระโดดตบ", reps: "20 ครั้ง", done: false, calories: 50, icon: "👏" },
-    { id: 3, name: "เต้นแอโรบิค", reps: "15 นาที", done: false, calories: 150, icon: "💃" },
-    { id: 4, name: "ดันพื้น", reps: "15 ครั้ง", done: false, calories: 40, icon: "💪" },
-    { id: 5, name: "ซิทอัพ", reps: "20 ครั้ง", done: false, calories: 30, icon: "🤸" }
+    { id: 1, name: "เดินเบาๆ", reps: "10 นาที", done: false, calories: 55, icon: "🏃" },
+    { id: 2, name: "ปั่นจักรยาน", reps: "30 นาที", done: false, calories: 150, icon: "🚲" },
+    { id: 3, name: "โยคะ", reps: "15 นาที", done: false, calories: 75, icon: "🤸‍♀️" },
   ])
   
   const [showAddExercise, setShowAddExercise] = useState(false)
@@ -238,7 +236,7 @@ export default function FitnessApp() {
       {/* Desktop Sidebar */}
       <div className="hidden md:flex w-60 bg-sky-600 text-white flex-col justify-between py-6 px-4">
         <div>
-          <h2 className="text-xl font-semibold mb-6 text-center">🏋️ Fitness Connect</h2>
+          <h2 className="text-xl font-semibold mb-6 text-center">🏋️ CharaFit</h2>
           <nav className="space-y-3">
             <Button variant="ghost" className={`w-full justify-start text-white ${page==='home' && 'bg-sky-700'}`} onClick={() => setPage('home')}><Home className="mr-2"/>หน้าแรก</Button>
             <Button variant="ghost" className={`w-full justify-start text-white ${page==='exercise' && 'bg-sky-700'}`} onClick={() => setPage('exercise')}><Dumbbell className="mr-2"/>ออกกำลังกาย</Button>
@@ -298,7 +296,7 @@ export default function FitnessApp() {
             </div>
             
             <Card className="mt-6 p-4 md:p-6 bg-gradient-to-br from-purple-100 to-pink-100">
-              <h3 className="text-lg font-semibold mb-3 text-purple-800">📊 ความคืบหน้าประจำสัปดาห์</h3>
+              <h3 className="text-lg font-semibold mb-3 text-purple-800">ความคืบหน้าประจำสัปดาห์</h3>
               <div className="space-y-3">
                 <div>
                   <div className="flex justify-between text-sm mb-1">
@@ -321,7 +319,7 @@ export default function FitnessApp() {
 
         {page === 'profile' && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-            <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-6">👤 โปรไฟล์ของฉัน</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-6">โปรไฟล์ของฉัน</h2>
             <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center">
               <div className="flex flex-col items-center">
                 <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="avatar" className="w-32 h-32 rounded-full border-4 border-sky-400 shadow-md" />
@@ -365,7 +363,7 @@ export default function FitnessApp() {
 
         {page === 'community' && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-            <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-4">💬 คอมมูนิตี้ออกกำลังกาย</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-4">คอมมูนิตี้ออกกำลังกาย</h2>
             
             {/* Post Creation */}
             <Card className="bg-white rounded-2xl shadow-md p-4 mb-6">
@@ -451,7 +449,7 @@ export default function FitnessApp() {
         {page === 'exercise' && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl md:text-2xl font-bold text-sky-700">💪 แผนการออกกำลังกายวันนี้</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-sky-700">แผนการออกกำลังกายวันนี้</h2>
               <Button 
                 className="bg-sky-600 hover:bg-sky-700"
                 onClick={() => setShowAddExercise(!showAddExercise)}
